@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: greetingsConsumer
+  slueth:
+    sampler:
+      probability: 1.0
+  mvc:
+    log-request-details: true
+server:
+  port: 9080
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.0.108:8761/eureka/
+
+logging:
+  level:
+    org:
+      springframework:
+        web:
+          servlet:
+            DispatcherServlet: DEBUG
+endpoints:
+  restart:
+    enabled: true
