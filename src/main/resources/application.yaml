@@ -6,12 +6,18 @@ spring:
       probability: 1.0
   mvc:
     log-request-details: true
+  cloud:
+    loadbalancer:
+      ribbon:
+        enabled: false
 server:
   port: 9080
 
 eureka:
   client:
     serviceUrl:
+      registerWithEureka: true
+      fetchRegistry: true
       defaultZone: http://192.168.0.108:8761/eureka/
 
 logging:
@@ -24,3 +30,4 @@ logging:
 endpoints:
   restart:
     enabled: true
+
